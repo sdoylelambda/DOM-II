@@ -7,7 +7,7 @@
 // });
 
 
-
+// Red on click
 const container = document.querySelector('html');
 container.addEventListener('click', function(eventObject){
  //console.log(`Event Target: ${eventObject.target}`);
@@ -16,6 +16,7 @@ container.addEventListener('click', function(eventObject){
   //eventObject.currentTarget.style.color = "red";
 });
 
+// Black on dblClick
 const containerBack = document.querySelector('html');
 containerBack.addEventListener('dblclick', function(eventObject){
  //console.log(`Event Target: ${eventObject.target}`);
@@ -23,3 +24,17 @@ containerBack.addEventListener('dblclick', function(eventObject){
   eventObject.target.style.color = "black";
   //eventObject.currentTarget.style.color = "red";
 });
+
+// Right click turns green
+const greenMouse = document.querySelector('html');
+greenMouse.addEventListener('contextmenu', function(eventObject){
+    console.log(`Hovering Target: ${eventObject.currentTarget}`);
+    eventObject.target.style.color = "green";
+});
+
+// 
+// const keyTrack = document.querySelector('html');
+// keyTrack.addEventListener('contextmenu', function(eventObject){
+//     console.log(`Hovering Target: ${eventObject.currentTarget}`);
+//     eventObject.target.style.color = "green";
+// });

@@ -1,18 +1,18 @@
 // Your code goes here
 
-// const workBtn = document.getElementsByClassName('btn');
-// workBtn.addEventListener('mouseover', function(eventObject){
-//  console.log(`btn fired!`);
-//   TweenMax.to("#btn", 1.5, {width:0, height:0}, {width:100, height:200})
-// });
+// DOM Unique Event Listeners
+
+const button = document.getElementsByClassName('btn');
+button[0].addEventListener('mouseover', function(eventObject){
+ console.log(`btn fired!`);
+  TweenMax.to(".btn", 1.5, {width:0, height:0}, {width:100, height:200})
+});
 
 // Red on click
 const container = document.querySelector('html');
 container.addEventListener('click', function(eventObject){
- //console.log(`Event Target: ${eventObject.target}`);
  console.log(`Current Target: ${eventObject.currentTarget}`);
   eventObject.target.style.color = "red";
-  //eventObject.currentTarget.style.color = "red";
 });
 
 // Black on dblClick
@@ -20,7 +20,6 @@ const containerBack = document.querySelector('html');
 containerBack.addEventListener('dblclick', function(eventObject){
  console.log(`Current Target: ${eventObject.currentTarget}`);
   eventObject.target.style.color = "black";
-  //eventObject.currentTarget.style.color = "red";
 });
 
 // Right click turns green
@@ -37,14 +36,29 @@ copyBlue.addEventListener('copy', function(eventObject){
   eventObject.target.style.color = "blue";
 });
 
-
 // Yellow on key presss
-const purp = document.querySelector('html');
-purp.addEventListener('keydown', function(eventObject){
+const yllow = document.querySelector('html');
+yllow.addEventListener('keydown', function(eventObject){
  //console.log(`Event Target: ${eventObject.target}`);
  console.log(`Current Target: ${eventObject.currentTarget}`);
 //   eventObject.target.style.color = "green";
   eventObject.currentTarget.style.color = "yellow";
+});
+
+
+// Notifies in console that button was clicked and prevents page re-loading
+const formSubmit = document.querySelector('.btn');
+formSubmit.addEventListener('click', function(event){
+ console.log(`Submit button was clicked!`);
+ // This will prevent the form from submitting to action_page.php
+  event.preventDefault();
+});
+
+const anchorTag = document.querySelector('a');
+anchorTag.addEventListener('click', function(event){
+ console.log(`Anchor was clicked!`);
+ // This will prevent the form from submitting to action_page.php
+  event.preventDefault();
 });
 
 
@@ -55,3 +69,21 @@ purp.addEventListener('keydown', function(eventObject){
 //     console.log(`Hovering Target: ${eventObject.currentTarget}`);
 //     eventObject.target.style.color = "green";
 // });
+
+
+// var button = document.querySelector('btn');
+// var html = document.querySelector('html');
+
+// function random(number) {
+//   return Math.floor(Math.random() * number);
+// }
+
+// button.onclick = function() {
+//   var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+//   button.style.backgroundColor = rndCol;
+// };
+
+// button.onauxclick = function() {
+//   var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+//   button.style.color = rndCol;
+// }
